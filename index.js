@@ -1,6 +1,8 @@
 // A module to fetch HTML meta tags from a remote URL
 var cheerio = require('cheerio');
 var request = require('request');
+var iconv  = require('iconv-lite');
+var charset = require('charset');
 
 module.exports = {
 	fetch: function (uri, user_options, callback) {
@@ -8,7 +10,8 @@ module.exports = {
 			url: uri,
 			headers: {
 				'User-Agent': 'request'
-			}
+			},
+                        encoding: null
 		};
 		
 		//  setup the args/user_options
@@ -34,8 +37,15 @@ module.exports = {
 		}
 		
 		request.get(options, function (error, response, body) {
-			if (!error && response.statusCode == 200) {
-				var $ = cheerio.load(body);
+		  if (!error && response.statusCode == 200) {
+                     if (charset(response.headers['content-type']) == 'iso-8859-1') {
+                       var utf8String = iconv.decode(new Buffer(body), "ISO-8859-1");
+                       var $ = cheerio.load(utf8String);
+                     } else {
+                       var $ = cheerio.load(body);
+                     }
+
+
 				var meta = $('meta');
 				var link = $('link');
 				var title = $('title').text();
