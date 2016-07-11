@@ -1,97 +1,37 @@
 {
-  "_args": [
-    [
-      "metagetplus@0.0.1",
-      "/live/keep/me-keep.pe"
-    ]
+  "name": "metagetplus",
+  "version": "0.0.2",
+  "description": "A Node.js module to fetch HTML meta tags (including Open Graph), title and favicons from a remote URL inspired from metaget https://github.com/mrvautin/metaget",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "metadata",
+    "fetch",
+    "meta",
+    "remote",
+    "meta",
+    "tags",
+    "html",
+    "parse",
+    "opengraph",
+    "open graph",
+    "favicon",
+    "favicons",
+    "title"
   ],
-  "_from": "metagetplus@0.0.1",
-  "_id": "metagetplus@0.0.1",
-  "_inCache": true,
-  "_installable": true,
-  "_location": "/metagetplus",
-  "_nodeVersion": "5.1.0",
-  "_npmOperationalInternal": {
-    "host": "packages-16-east.internal.npmjs.com",
-    "tmp": "tmp/metagetplus-0.0.1.tgz_1468085493070_0.7740134834311903"
-  },
-  "_npmUser": {
-    "email": "gilles.marec@gmail.com",
-    "name": "gmarec"
-  },
-  "_npmVersion": "3.3.12",
-  "_phantomChildren": {},
-  "_requested": {
-    "name": "metagetplus",
-    "raw": "metagetplus@0.0.1",
-    "rawSpec": "0.0.1",
-    "scope": null,
-    "spec": "0.0.1",
-    "type": "version"
-  },
-  "_requiredBy": [
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/metagetplus/-/metagetplus-0.0.1.tgz",
-  "_shasum": "c2e5b9821271a3716229063f9ab9a491c195e65c",
-  "_shrinkwrap": null,
-  "_spec": "metagetplus@0.0.1",
-  "_where": "/live/keep/me-keep.pe",
-  "author": {
-    "email": "gilles.marec@gmail.com",
-    "name": "Gilles Marec",
-    "url": "http://marec.net"
-  },
-  "bugs": {
-    "url": "https://github.com/gmarec/metagetplus/issues"
+  "author": "Gilles Marec <gilles.marec@gmail.com> (http://marec.net)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gmarec/metagetplus.git"
   },
   "dependencies": {
     "charset": "^1.0.0",
     "cheerio": "^0.19.0",
     "iconv-lite": "^0.4.13",
     "request": "^2.67.0"
-  },
-  "description": "A Node.js module to fetch HTML meta tags (including Open Graph), title and favicons from a remote URL inspired from metaget https://github.com/mrvautin/metaget",
-  "devDependencies": {},
-  "directories": {},
-  "dist": {
-    "shasum": "c2e5b9821271a3716229063f9ab9a491c195e65c",
-    "tarball": "https://registry.npmjs.org/metagetplus/-/metagetplus-0.0.1.tgz"
-  },
-  "gitHead": "07f2f41b8da0b29e50787e42890bea13bd844d60",
-  "homepage": "https://github.com/gmarec/metagetplus#readme",
-  "keywords": [
-    "favicon",
-    "favicons",
-    "fetch",
-    "html",
-    "meta",
-    "meta",
-    "metadata",
-    "open graph",
-    "opengraph",
-    "parse",
-    "remote",
-    "tags",
-    "title"
-  ],
-  "license": "MIT",
-  "main": "index.js",
-  "maintainers": [
-    {
-      "name": "gmarec",
-      "email": "gilles.marec@gmail.com"
-    }
-  ],
-  "name": "metagetplus",
-  "optionalDependencies": {},
-  "readme": "ERROR: No README data found!",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gmarec/metagetplus.git"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "version": "0.0.1"
+    
+  }
 }
