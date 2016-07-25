@@ -1,6 +1,6 @@
 {
   "name": "metagetplus",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "A Node.js module to fetch HTML meta tags (including Open Graph), title and favicons from a remote URL inspired from metaget https://github.com/mrvautin/metaget",
   "main": "index.js",
   "scripts": {
