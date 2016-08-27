@@ -46,6 +46,7 @@ metagetplus.fetch('https://wordpress.com',{headers:{"User-Agent": "Googlebot"}},
 
 ## Release
 
+0.0.5 improve charset detection
 0.0.4 add some charset detection in http response and in meta, remove unwanted newlines
 
 ## Contributing

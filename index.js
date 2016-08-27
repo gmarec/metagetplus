@@ -3,6 +3,7 @@ var cheerio = require('cheerio');
 var request = require('request');
 var iconv  = require('iconv-lite');
 var charset = require('charset');
+var lowerCase = require('lower-case');
 
 module.exports = {
 	fetch: function (uri, user_options, callback) {
@@ -48,13 +49,14 @@ module.exports = {
                        var utf8String = iconv.decode(new Buffer(body), "WINDOWS-1252");
                        var $ = cheerio.load(utf8String);
                      } else {
-                       if (body.indexOf('charset=iso-8858-15') > -1) {
+		       var lowerBody = lowerCase(body);
+                       if (lowerBody.indexOf('charset=iso-8859-15') > -1 || lowerBody.indexOf('charset=\'iso-8859-15\'') > -1 || lowerBody.indexOf('charset="iso-8859-15"') > -1) {
                          var utf8String = iconv.decode(new Buffer(body), "ISO-8859-15");
                          var $ = cheerio.load(utf8String);
-                       } else if (body.indexOf('charset=iso-8859-1') > -1) {
+		       } else if (lowerBody.indexOf('charset=iso-8859-1') > -1 || lowerBody.indexOf('charset=\'iso-8859-1\'') > -1 || lowerBody.indexOf('charset="iso-8859-1"') > -1) {
                          var utf8String = iconv.decode(new Buffer(body), "ISO-8859-1");
                          var $ = cheerio.load(utf8String);
-                       } else if (body.indexOf('windows-1252') > -1) {
+                       } else if (lowerBody.indexOf('charset=windows-1252') > -1 || lowerBody.indexOf('charset=\'windows-1252\'') > -1 || lowerBody.indexOf('charset="windows-1252"') > -1) {
                          var utf8String = iconv.decode(new Buffer(body), "WINDOWS-1252");
                          var $ = cheerio.load(utf8String);
                        } else {
